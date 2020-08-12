@@ -8,18 +8,21 @@
 </head>
 
 <body>
-   <div class="centered-form">
-       <div class="centered-form__box">
-           <h1>Join</h1>
-           <form action="/chat.html">
-               <label >Display name</label>
-               <input type="text" name="username" placeholder="Display name" required>
-               <label>Room name</label>
-               <input type="text" name="room" placeholder="room" required>
-               <button type="submit">Join</button>
-           </form>
-       </div>
-   </div>
+    <div class="centered-form" id="particles-js">
+        <div class="centered-form__box">
+            <h1>Chat App</h1>
+            <h3>Select a room to join</h3>
+            <form action="/chat.html">
+                <label>Chat name</label>
+                <input type="text" name="username" placeholder="your name" required>
+                <label>Room</label>
+                <input type="text" name="room" placeholder="chat room" required>
+                <button type="submit">Join</button>
+            </form>
+        </div>
+    </div>
 </body>
+<script src="./js/particles.js"></script>
+<script src="./js/app.js"></script>
 
 </html>
