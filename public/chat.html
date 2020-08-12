@@ -4,6 +4,7 @@
 <head>
     <title>Chat App</title>
     <link rel="icon" href="./img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -15,16 +16,23 @@
 
 
         <div class="chat__main">
-            <h1>Chat app</h1>
+            <div class="chat__header">
+                <h2>Chat Messages</h2>
+            </div>
 
-            <div id="messages" class="chat__messages"></div>
+            <div id="messages" class="chat__messages">
+               
+            </div>
 
             <div class="compose">
                 <form action="" id="message-form">
-                    <input type="text" name="message" placeholder="Message" required autocomplete="off">
+                    <input id="message-input" type="text" name="message" placeholder="Message" required autocomplete="off">
+                    <input type="file" id="share-pic" class="hidden"/>
+                    <label for="share-pic" id="share-pic-label">Upload an image</label>
                     <button>Send</button>
                 </form>
-                <button id="send-location">Send location</button>
+                <button id="send-location">Share location</button>
+                
             </div>
 
         </div>
@@ -43,7 +51,7 @@
 
 
     <script id="location-template" type="text/html">
-        <div>
+        <div class="message">
             <p>
                 <span class="message__name">{{username}}</span>
                 <span class="message__meta">{{createdAt}}</span>
@@ -61,7 +69,18 @@
                 <li>{{username}}</li>
             {{/users}}
         </ul>
-        
+    </script>
+
+    <script id="image-template" type="text/html">
+    
+    <div class="message">
+        <p>
+            <span class="message__name">{{username}}</span>
+            <span class="message__meta">{{createdAt}}</span>
+        </p>
+        <img src="{{imageUrl}}" style="max-width: 50%;">
+    </div>
+    
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>

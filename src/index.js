@@ -3,7 +3,7 @@ const path=require('path')
 const http=require('http')
 const socketio=require('socket.io')
 const Filter=require('bad-words')
-const {generateMessage, generateLocationMessage}=require('./utils/messages')
+const {generateMessage, generateLocationMessage, generateImageMessage}=require('./utils/messages')
 const {addUser, removeUser, getUser, getUsersInRoom}=require('./utils/users')
 
 const app=express()
@@ -63,6 +63,14 @@ io.on('connection', (socket)=>{
 
         io.to(user.room).emit('locationMessage', generateLocationMessage(user.username, `https://google.com/maps?q=${location.lat},${location.long}`))
         callback('Location shared')
+    })
+
+
+    //receive user image
+    socket.on('userImage', (url, callback)=>{
+        const user=getUser(socket.id)
+        io.to(user.room).emit('addImage', generateImageMessage(user.username, url))
+        callback('Image received')
     })
 
     socket.on('disconnect', ()=>{

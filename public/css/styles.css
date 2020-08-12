@@ -4,14 +4,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Teko', sans-serif;
 }
 
 html {
-    font-size: 16px;
+    font-size: 25px;
 }
 
 input {
-    font-size: 14px;
+    font-size: 20px;
 }
 
 body {
@@ -26,7 +27,7 @@ h1 {
 
 label {
     display: block;
-    font-size: 14px;
+    font-size: 20px;
     margin-bottom: 8px;
     color: #777;
 }
@@ -40,21 +41,13 @@ input {
 button {
     cursor: pointer;
     padding: 12px;
-    background: #3685B5;
+    background: #565254;
     border: none;
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     transition: background .3s ease;
 }
 
-button:hover {
-    background: #0471A6;
-}
-
-button:disabled {
-    cursor: default;
-    background: #3685B5;
-}
 
 /* Join Page Styles */
 
@@ -93,7 +86,7 @@ button:disabled {
 .chat__sidebar {
     height: 100vh;
     color: white;
-    background: #333744;
+    background: #565254;
     width: 225px;
     overflow-y: scroll;
 }
@@ -107,7 +100,18 @@ button:disabled {
     max-height: 100vh;
 }
 
+.chat__header {
+    background-color: #7A7D7D;
+    height: 10%;
+}
+
+.chat__header h2 {
+    padding: 18px 0 10px 10px;
+    color: white;
+}
+
 .chat__messages {
+    background-color: #FFFBFE;
     flex-grow: 1;
     padding: 24px 24px 0 24px;
     overflow-y: scroll;
@@ -116,18 +120,21 @@ button:disabled {
 /* Message Styles */
 
 .message {
-    margin-bottom: 16px;   
+    margin-bottom: 16px;
+    background-color: #F4F0F3;   
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .message__name {
     font-weight: 600;
-    font-size: 14px;
+    font-size: 20px;
     margin-right: 8px;
 }
 
 .message__meta {
     color: #777;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .message a {
@@ -149,30 +156,53 @@ button:disabled {
     margin-right: 16px;
 }
 
-.compose input {
+#message-input {
     border: 1px solid #eeeeee;
-    width: 100%;
+    width: 60%;
     padding: 12px;
     margin: 0 16px 0 0;
     flex-grow: 1;
 }
 
 .compose button {
-    font-size: 14px;
+    font-size: 25px;
+    border-radius: 5px;
+    
 }
 
+#send-location, #share-pic {
+    margin-right: 10px;
+}
+
+#share-pic-label {
+    background-color: #565254;
+    border-radius: 5px;
+    color: white;
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 25px;
+    text-align: center;
+}
+
+#share-pic-label:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
 /* Chat Sidebar Styles */
 
 .room-title {
     font-weight: 400;
-    font-size: 22px;
-    background: #2c2f3a;
+    font-size: 25px;
+    background: #363944;
     padding: 24px;   
 }
 
 .list-title {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 25px;
     margin-bottom: 4px;
     padding: 12px 24px 0 24px;
 }
